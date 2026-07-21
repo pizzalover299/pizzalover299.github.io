@@ -1,8 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    body { margin:0; background:#000; color:#fff; font:700 6vw cursive; height:100dvh; display:grid; place-items:center; text-align:center; }
+    i { font:3vw cursive; color:#777; }
+    #t { width: 100%; }
+</style>
 <script>
 function base64ToUtf8(str) {
-    str = str.trim();
     str = str.replace(/\s+/g, '+');
     return decodeURIComponent(escape(atob(str)));
 }
-document.write(base64ToUtf8(location.search.slice(3)));
+var query = location.search;
+var index = query.indexOf('?d=');
+var encoded = index !== -1 ? query.substring(index + 3) : query.slice(3);
+document.getElementById('t').innerHTML = base64ToUtf8(encoded);
 </script>
+</head>
+<body>
+<main id="t"></main>
+</body>
+</html>
