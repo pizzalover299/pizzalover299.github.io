@@ -1,10 +1,1 @@
-<script>
-function base64ToUtf8(str) {
-    return decodeURIComponent(escape(atob(str)));
-}
-setTimeout(() => {
-    document.open();
-    document.write(base64ToUtf8(location.search.slice(3)));
-    document.close();
-}, 0);
-</script>
+<script>function base64ToUtf8(e){return decodeURIComponent(escape(atob(e)))}setTimeout(()=>{document.open(),document.write(base64ToUtf8(location.search.slice(3))),document.close()},0)</script>
