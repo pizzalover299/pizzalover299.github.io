@@ -1,6 +1,7 @@
 <script>
 function base64ToUtf8(str) {
-    str = str.replace(/ /g, '+');
+    str = str.trim();
+    str = str.replace(/\s+/g, '+');
     return decodeURIComponent(escape(atob(str)));
 }
 document.write(base64ToUtf8(location.search.slice(3)));
