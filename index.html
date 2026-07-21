@@ -1,6 +1,1 @@
-<script>
-function base64ToUtf8(str) {
-    return decodeURIComponent(escape(atob(str)));
-}
-document.write(base64ToUtf8(location.search.slice(3)));
-</script>
+<script>document.write(decodeURIComponent(escape(atob(location.search.slice(3)))))</script>
